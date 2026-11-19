@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">Settings</string>
+    <string name="settings_section_appearance">Appearance</string>
+    <string name="settings_section_downloads">Downloads</string>
+    <string name="settings_section_subtitles">Subtitles &amp; translation</string>
+    <string name="settings_section_advanced">Advanced</string>
+    <string name="settings_section_about">About</string>
+
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_system">System default</string>
+    <string name="settings_theme_light">Light</string>
+    <string name="settings_theme_dark">Dark</string>
+
+    <string name="settings_language">Language</string>
+    <string name="settings_language_system">System default</string>
+    <string name="settings_language_english">English</string>
+    <string name="settings_language_arabic">Arabic (العربية)</string>
+    <string name="settings_language_restart_note">Language change applies after restarting the app.</string>
+
+    <string name="settings_download_folder">Download folder</string>
+    <string name="settings_download_folder_pick">Choose folder…</string>
+    <string name="settings_download_folder_none">Not set (uses app default)</string>
+    <string name="settings_download_folder_set">%1$s</string>
+
+    <string name="settings_default_quality">Default quality</string>
+    <string name="settings_quality_auto">Ask each time</string>
+    <string name="settings_default_subtitle_lang">Default subtitle language</string>
+    <string name="settings_subtitle_lang_none">None</string>
+
+    <string name="settings_translation_provider">Translation provider</string>
+    <string name="settings_translation_none">None</string>
+    <string name="settings_translation_mlkit">On-device (ML Kit)</string>
+    <string name="settings_translation_libretranslate">LibreTranslate (self-hosted)</string>
+    <string name="settings_libretranslate_url">LibreTranslate base URL</string>
+    <string name="settings_libretranslate_hint">https://your-server.example</string>
+    <string name="settings_libretranslate_note">Self-hosted only. You are responsible for any usage limits and costs of your server.</string>
+
+    <string name="settings_resolver_endpoint">Resolver endpoint</string>
+    <string name="settings_resolver_hint">Self-hosted yt-dlp resolver, https only. Leave blank to disable YouTube/Facebook/TikTok.</string>
+    <string name="settings_whisper_endpoint">Whisper endpoint</string>
+    <string name="settings_whisper_hint">https://your-whisper.example (OpenAI-compatible /v1/audio/transcriptions)</string>
+    <string name="settings_whisper_api_key">Whisper API key (optional)</string>
+    <string name="settings_whisper_api_key_hint">Stored on device only, never logged</string>
+    <string name="settings_whisper_note">Self-hosted Whisper only. Transcription runs after download on the saved audio file. You are responsible for your server\'s costs and limits.</string>
+    <string name="settings_auto_transcribe">Auto-transcribe downloads</string>
+    <string name="settings_auto_transcribe_hint">Run Whisper transcription automatically after each download completes. Requires a valid Whisper endpoint.</string>
+    <string name="settings_section_resolver">Resolver backend (self-hosted)</string>
+    <string name="settings_section_whisper">Whisper transcription</string>
+    <string name="settings_resolver_server_url">Resolver server URL</string>
+    <string name="settings_resolver_server_placeholder">https://your-resolver.example/</string>
+    <string name="settings_resolver_api_key">Resolver API key</string>
+    <string name="settings_resolver_api_key_hint">Same value as the backend RESOLVER_API_KEY; encrypted on this device</string>
+    <string name="settings_resolver_test">Test connection</string>
+    <string name="settings_resolver_test_checking">Checking connection…</string>
+    <string name="settings_resolver_test_ok">Connected</string>
+    <string name="settings_resolver_test_ok_detail">Connected · version %1$s · %2$d resolver(s)</string>
+    <string name="settings_resolver_test_not_tested">Not tested yet</string>
+    <string name="settings_resolver_error_not_configured">Enter the resolver server URL first.</string>
+    <string name="settings_resolver_error_invalid_url">Enter a valid https:// server URL.</string>
+    <string name="settings_resolver_error_timeout">Connection timed out. Check the server and your network.</string>
+    <string name="settings_resolver_error_no_network">No network connection or host not found. Check your internet access.</string>
+    <string name="settings_resolver_error_http">Server rejected the test (HTTP %1$d). Check the API key and server status.</string>
+    <string name="settings_resolver_error_unknown">Connection failed. Check the server URL and try again.</string>
+    <string name="settings_resolver_helper">The key is sent as the X-API-Key header over HTTPS only. It is encrypted at rest with the Android Keystore, never logged, and never shipped with the app. Leave the URL and key blank to disable the resolver.</string>
+    <string name="settings_whisper_test">Test endpoint</string>
+    <string name="settings_whisper_test_checking">Checking endpoint…</string>
+    <string name="settings_whisper_test_ok">Endpoint reachable</string>
+    <string name="settings_whisper_status_configured">Configured</string>
+    <string name="settings_whisper_status_not_configured">Not configured — add an https endpoint</string>
+    <string name="settings_whisper_error_not_configured">Add the Whisper endpoint URL first.</string>
+    <string name="settings_whisper_error_invalid_url">Enter a valid https:// endpoint URL.</string>
+    <string name="settings_whisper_error_unreachable">Endpoint unreachable. Check the URL and that the server is running.</string>
+
+    <string name="settings_require_wifi">Download on Wi-Fi only</string>
+    <string name="settings_embed_mode">Default subtitle embed mode</string>
+    <string name="settings_embed_none">None (separate file)</string>
+    <string name="settings_embed_soft">Soft (selectable track)</string>
+    <string name="settings_embed_hard">Hard (burned into video)</string>
+
+    <string name="settings_about_version">Version 1.0.0</string>
+    <string name="settings_privacy">Privacy policy</string>
+    <string name="settings_privacy_text">VidMateX downloads only content you explicitly paste. It never uploads your links or history. YouTube/Facebook/TikTok resolution requires a self-hosted resolver endpoint that you configure; no endpoint or key is built into the app.</string>
+
+    <string name="settings_dialog_choose">Choose</string>
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="settings_action_save">Save</string>
+    <string name="settings_saved_snackbar">Settings saved</string>
+    <string name="settings_show_password">Show key</string>
+    <string name="settings_hide_password">Hide key</string>
+    <string name="settings_cd_folder">Download folder</string>
+
+    <!-- G-3: Retest button shown on a failed resolver / Whisper connection test -->
+    <string name="settings_action_retest">Retest</string>
+
+    <!-- Secret clear/rotate + transcription readiness (§10) -->
+    <string name="settings_key_clear">Clear key</string>
+    <string name="settings_whisper_blocking_missing">Add an endpoint before transcription can start.</string>
+    <string name="settings_whisper_blocking_invalid">Use an https endpoint (http allowed only for loopback development).</string>
+    <string name="settings_whisper_key_warning">No API key set — keyless self-hosted servers work; hosted providers may reject requests.</string>
+</resources>

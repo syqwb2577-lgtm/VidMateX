@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="history_title">السجل</string>
+    <string name="history_include_failed">تضمين الفاشلة</string>
+    <string name="history_empty_title">لا توجد تنزيلات مكتملة بعد</string>
+    <string name="history_empty_subtitle">ستظهر التنزيلات المنتهية هنا. يمكنك فتحها أو مشاركتها أو حذفها.</string>
+    <string name="history_cd_failed">تنزيل فاشل</string>
+    <string name="history_action_open">فتح</string>
+    <string name="history_action_share">مشاركة</string>
+    <string name="history_action_delete">حذف</string>
+    <string name="history_cd_open">فتح</string>
+    <string name="history_cd_share">مشاركة</string>
+    <string name="history_cd_delete">حذف</string>
+    <string name="history_cd_preview">معاينة</string>
+    <string name="history_action_preview">معاينة</string>
+    <string name="history_today">اليوم</string>
+    <string name="history_yesterday">أمس</string>
+    <string name="history_failed">فشل</string>
+    <string name="history_toast_file_missing">الملف غير موجود على الجهاز</string>
+    <string name="history_toast_no_open_app">لا يوجد تطبيق مثبت يمكنه فتح هذا الملف</string>
+    <string name="history_toast_no_share_app">لا يوجد تطبيق مثبت يمكنه مشاركة هذا الملف</string>
+    <string name="history_share_subject">مشاركة “%1$s”</string>
+    <string name="history_bytes_unknown">—</string>
+    <!-- شارات الحالة (مطابقة لمصطلحات شاشة التنزيلات) -->
+    <string name="history_state_queued">في قائمة الانتظار</string>
+    <string name="history_state_active">جارٍ التنزيل</string>
+    <string name="history_state_paused">متوقف مؤقتاً</string>
+    <string name="history_state_completed">مكتمل</string>
+    <string name="history_state_failed">فشل</string>
+    <string name="history_state_cancelled">ملغى</string>
+    <!-- سطر التقدّم -->
+    <string name="history_bytes_of">%1$s من %2$s</string>
+    <string name="history_bytes_saved">محفوظ · %1$s</string>
+    <string name="history_eta_left">%1$s متبقٍ</string>
+    <string name="history_state_paused_at">متوقف مؤقتاً عند %1$d%%</string>
+    <!-- الإجراءات -->
+    <string name="history_action_retry">إعادة المحاولة</string>
+    <string name="history_cd_retry">إعادة محاولة التنزيل</string>
+    <string name="history_retry_queued">تمت إضافة إعادة المحاولة إلى القائمة</string>
+    <!-- تفاصيل الخطأ القابلة للتوسيع -->
+    <string name="history_error_show">إظهار تفاصيل الخطأ</string>
+    <string name="history_error_hide">إخفاء تفاصيل الخطأ</string>
+    <!-- التحميل + حالة القائمة الفارغة -->
+    <string name="history_loading">جارٍ تحميل التنزيلات…</string>
+    <string name="history_empty_title_all">لا توجد تنزيلات بعد</string>
+    <string name="history_empty_subtitle_all">ستظهر هنا التنزيلات ومدى تقدّمها. يمكن فتح الملفات المنتهية أو مشاركتها أو معاينتها مع الترجمات.</string>
+</resources>

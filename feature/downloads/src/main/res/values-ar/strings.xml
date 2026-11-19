@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Filter chips -->
+    <string name="dl_filter_all">الكل</string>
+    <string name="dl_filter_active">نشط</string>
+    <string name="dl_filter_completed">مكتمل</string>
+    <string name="dl_filter_failed">فشل</string>
+    <string name="dl_filter_paused">متوقف مؤقتاً</string>
+
+    <!-- Empty state -->
+    <string name="dl_empty_title">لا توجد تنزيلات بعد</string>
+    <string name="dl_empty_subtitle">الصق رابطاً في تبويب الرئيسية لبدء تنزيل.</string>
+
+    <!-- State badges -->
+    <string name="dl_state_queued">في قائمة الانتظار</string>
+    <string name="dl_state_active">جارٍ التنزيل</string>
+    <string name="dl_state_paused">متوقف مؤقتاً</string>
+    <string name="dl_state_completed">مكتمل</string>
+    <string name="dl_state_failed">فشل</string>
+    <string name="dl_state_cancelled">ملغى</string>
+
+    <!-- Progress line -->
+    <string name="dl_progress_queued">في قائمة الانتظار…</string>
+    <string name="dl_progress_downloading">جارٍ التنزيل…</string>
+    <string name="dl_progress_paused_at">متوقف مؤقتاً عند %1$d%%</string>
+    <string name="dl_progress_saved">محفوظ · %1$s</string>
+
+    <!-- Action content descriptions -->
+    <string name="dl_cd_pause">إيقاف مؤقت</string>
+    <string name="dl_cd_cancel">إلغاء</string>
+    <string name="dl_cd_resume">استئناف</string>
+    <string name="dl_cd_retry">إعادة المحاولة</string>
+    <string name="dl_cd_open">فتح</string>
+    <string name="dl_cd_share">مشاركة</string>
+    <string name="dl_cd_delete">حذف</string>
+    <string name="dl_cd_preview">معاينة</string>
+
+    <!-- Notification channel names / descriptions -->
+    <string name="dl_channel_downloads_name">التنزيلات</string>
+    <string name="dl_channel_downloads_desc">تقدم التنزيل وإكماله</string>
+    <string name="dl_channel_processing_name">المعالجة</string>
+    <string name="dl_channel_processing_desc">تضمين الترجمات ومعالجة الوسائط</string>
+
+    <!-- Notification text -->
+    <string name="dl_notif_downloading">جارٍ التنزيل…</string>
+    <string name="dl_notif_title_downloading">جارٍ التنزيل</string>
+    <string name="dl_notif_title_processing">جارٍ المعالجة</string>
+    <string name="dl_notif_embedding">جارٍ تضمين الترجمات…</string>
+    <string name="dl_notif_eta_left">%1$s متبقٍ</string>
+    <string name="dl_notif_complete">اكتمل التنزيل</string>
+    <string name="dl_notif_complete_text">انتهى التنزيل</string>
+    <string name="dl_notif_failed">فشل التنزيل</string>
+    <string name="dl_notif_action_cancel">إلغاء</string>
+    <!-- إشعار الإيقاف المؤقت -->
+    <string name="dl_notif_action_pause">إيقاف مؤقت</string>
+    <string name="dl_notif_paused">متوقف مؤقتاً</string>
+    <string name="dl_notif_paused_at">متوقف مؤقتاً عند %1$d%%</string>
+    <!-- رسائل خطأ ودية -->
+    <string name="dl_error_network">خطأ في الشبكة. تحقق من اتصالك وحاول مجدداً.</string>
+    <string name="dl_error_server">خطأ في الخادم (%1$s). حاول لاحقاً.</string>
+    <string name="dl_error_permanent_http">فشل التنزيل (HTTP %1$s). ربما انتهت صلاحية الرابط أو يتطلب دخولاً.</string>
+    <string name="dl_error_storage">التخزين غير متوفر: مساحة فارغة غير كافية أو مجلد التنزيل غير قابل للكتابة.</string>
+    <string name="dl_error_permission">تم رفض الإذن: اسمح بالوصول إلى مجلد التنزيل ثم أعد المحاولة.</string>
+    <string name="dl_error_missing_stream">لم يتم العثور على بث قابل للتنزيل للجودة المحددة.</string>
+    <string name="dl_error_unsupported">هذا التنسيق غير مدعوم للتنزيل.</string>
+    <string name="dl_error_resolver">تعذّر تحليل المصدر. قد يكون الرابط غير مدعوم أو غير متوفر.</string>
+    <string name="dl_error_unknown">فشل التنزيل. حاول مجدداً.</string>
+    <string name="dl_error_duplicate">هذا العنصر في قائمة الانتظار أو قيد التنزيل بالفعل.</string>
+    <!-- التحقق من الرابط / الأمان -->
+    <string name="dl_error_invalid_url">الرابط ليس رابط وسائط صالحاً. تحقق من العنوان وحاول مجدداً.</string>
+    <string name="dl_error_not_https">يجب أن يستخدم الرابط اتصالاً آمناً HTTPS للتنزيل.</string>
+    <string name="dl_error_private_host">التنزيلات من العناوين الخاصة أو المحلية أو على الشبكة المحلية محظورة لأسباب أمنية.</string>
+    <string name="dl_error_unsupported_host">نوع هذا الرابط غير مدعوم للتنزيل.</string>
+    <!-- الامتثال: صفحات المنصات للمعاينة فقط -->
+    <string name="dl_error_platform_compliance">تعرض صفحة المنصة هذه بيانات المعاينة فقط. يمكن تنزيل روابط ملفات الفيديو/الصوت المباشرة؛ أما تنزيل صفحات المنصات فغير مدعوم في هذا التطبيق.</string>
+    <string name="dl_compliance_note">ملاحظة: روابط المنصات (مثل YouTube وFacebook وTikTok) للمعاينة فقط. ينزّل هذا التطبيق روابط ملفات الفيديو/الصوت المباشرة ولا ينزّل صفحات المنصات.</string>
+    <!-- سلامة الملف -->
+    <string name="dl_error_integrity">الملف الذي تم تنزيله غير مكتمل أو تالف وتم تجاهله. يرجى إعادة المحاولة.</string>
+    <string name="dl_error_embed_failed">فشل تضمين الترجمات. قد تكون الحاوية أو تنسيق الترجمة غير مدعوم.</string>
+    <string name="dl_error_embed_invalid_spec">تعذّرت قراءة مهمة التضمين. أعد التنزيل من فضلك.</string>
+    <!-- تفاصيل التقدم -->
+    <string name="dl_progress_bytes">%1$s من %2$s</string>
+    <string name="dl_badge_audio">صوت</string>
+
+    <!-- G-3: تجاهل رسالة خطأ صف فاشل (يُحتفظ بالصف في السجل) -->
+    <string name="dl_error_dismiss">تجاهل</string>
+</resources>

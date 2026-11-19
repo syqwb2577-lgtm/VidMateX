@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subtitles_title">الترجمات</string>
+    <string name="subtitles_input_hint">الصق رابط فيديو (يوتيوب، فيسبوك، تيك توك، أو رابط مباشر)</string>
+    <string name="subtitles_resolve">استخراج</string>
+    <string name="subtitles_resolving">جاري الاستخراج…</string>
+    <string name="subtitles_clear">مسح</string>
+    <string name="subtitles_select_track">اختر مسار الترجمة</string>
+    <string name="subtitles_no_tracks">لا توجد مسارات ترجمة متاحة لهذا الفيديو.</string>
+    <string name="subtitles_fetching_subtitle">جاري تحميل الترجمة…</string>
+    <string name="subtitles_preview">معاينة (أول %1$d من %2$d مقطع)</string>
+    <string name="subtitles_format">صيغة المخرجات</string>
+    <string name="subtitles_translate">ترجمة الترجمات</string>
+    <string name="subtitles_target_language">اللغة الهدف</string>
+    <string name="subtitles_translation_not_configured">مزود الترجمة غير مهيأ. افتح الإعدادات لتفعيل ترجمة ML Kit على الجهاز أو تعيين نقطة LibreTranslate.</string>
+    <string name="subtitles_apply_translation">معاينة الترجمة</string>
+    <string name="subtitles_translating">جاري الترجمة… (أول تشغيل ينزّل نموذج اللغة)</string>
+    <string name="subtitles_translation_done">تمت تطبيق الترجمة على المعاينة.</string>
+    <string name="subtitles_mode">وضع التنزيل</string>
+    <string name="subtitles_mode_video_only">فيديو فقط</string>
+    <string name="subtitles_mode_subtitle_only">ترجمة فقط</string>
+    <string name="subtitles_mode_video_subtitle">فيديو + ترجمة</string>
+    <string name="subtitles_embed">تضمين في الفيديو</string>
+    <string name="subtitles_embed_off">بدون</string>
+    <string name="subtitles_embed_soft">ناعمة (قابلة للاختيار)</string>
+    <string name="subtitles_embed_hard">ثابتة (مدمجة في الفيديو)</string>
+    <string name="subtitles_style">نمط الدمج الثابت</string>
+    <string name="subtitles_font_size">حجم الخط: %1$d</string>
+    <string name="subtitles_outline_width">سمك الحدود: %1$.1f</string>
+    <string name="subtitles_margin">الهامش العمودي: %1$d</string>
+    <string name="subtitles_color">لون النص</string>
+    <string name="subtitles_color_white">أبيض</string>
+    <string name="subtitles_color_yellow">أصفر</string>
+    <string name="subtitles_color_cyan">سماوي</string>
+    <string name="subtitles_color_green">أخضر</string>
+    <string name="subtitles_background">مربع خلفية</string>
+    <string name="subtitles_position">الموضع</string>
+    <string name="subtitles_position_bottom">أسفل</string>
+    <string name="subtitles_position_top">أعلى</string>
+    <string name="subtitles_bold">نص عريض</string>
+    <string name="subtitles_live_preview">معاينة مباشرة</string>
+    <string name="subtitles_sample_cue">نص ترجمة تجريبي</string>
+    <string name="subtitles_download">تنزيل</string>
+    <string name="subtitles_enqueueing">جاري الإضافة…</string>
+    <string name="subtitles_download_queued">تمت الإضافة إلى قائمة التنزيل. تابعها في تبويب التنزيلات.</string>
+    <string name="subtitles_error_no_track">اختر مسار ترجمة أولاً.</string>
+    <string name="subtitles_error_no_video">لا يوجد تيار فيديو متاح لهذا المصدر.</string>
+    <string name="subtitles_error_translation">فشلت الترجمة: %1$s</string>
+    <string name="subtitles_lang_ar">العربية</string>
+    <string name="subtitles_lang_en">الإنجليزية</string>
+    <string name="subtitles_lang_fr">الفرنسية</string>
+    <string name="subtitles_lang_es">الإسبانية</string>
+    <string name="subtitles_lang_de">الألمانية</string>
+    <string name="subtitles_lang_tr">التركية</string>
+    <string name="subtitles_lang_zh">الصينية</string>
+    <string name="subtitles_auto_generated">توليد تلقائي</string>
+    <string name="subtitles_shift">إزاحة التوقيت</string>
+    <string name="subtitles_shift_value">%1$d مللي ثانية</string>
+    <string name="subtitles_shift_hint">سالب = أبكر، موجب = متأخر (±60 ثانية)</string>
+    <string name="subtitles_shift_reset">إعادة ضبط</string>
+    <string name="subtitles_sidecar_original">احفظ الترجمة الأصلية أيضاً كملف منفصل</string>
+    <string name="subtitles_whisper_generate">توليد ترجمة من الصوت (Whisper)</string>
+    <string name="subtitles_whisper_note">يعمل نسخ Whisper بعد التنزيل على ملف الصوت المحفوظ. قم بتكوين نقطة النهاية في الإعدادات.</string>
+    <string name="subtitles_whisper_not_configured">نقطة Whisper غير مهيأة — افتح الإعدادات للتفعيل.</string>
+    <string name="subtitles_preview_original">الأصلية</string>
+    <string name="subtitles_preview_translated">المترجمة (%1$s)</string>
+    <!-- Worker نسخ الكلام إلى نص عبر Whisper -->
+    <string name="subtitles_transcribe_title">النسخ من الكلام (Whisper)</string>
+    <string name="subtitles_transcribe_pick_file">نسخ ملف صوتي أو فيديو</string>
+    <string name="subtitles_transcribe_pick_hint">اختر ملف صوتي أو فيديو على هذا الجهاز؛ تتم نسخه بواسطة نقطة Whisper التي قمت بتكوينها. الاتصال بالشبكة مطلوب.</string>
+    <string name="subtitles_transcribe_source_language">اللغة المنطوقة</string>
+    <string name="subtitles_lang_auto">تلقائي</string>
+    <string name="subtitles_transcribe_stage_preparing">تجهيز الملف</string>
+    <string name="subtitles_transcribe_stage_transcribe">رفع الصوت والتعرف على الكلام</string>
+    <string name="subtitles_transcribe_stage_write">كتابة ملفي SRT و VTT</string>
+    <string name="subtitles_transcribe_queued">تمت الإضافة إلى طابور النسخ…</string>
+    <string name="subtitles_transcribe_running">جاري النسخ… %1$d%%</string>
+    <string name="subtitles_transcribe_success">اكتمل النسخ — %1$d مقطع ترجمة جاهز للمعاينة أو الترجمة أو التنزيل.</string>
+    <string name="subtitles_transcribe_retry">إعادة المحاولة</string>
+    <string name="subtitles_transcribe_dismiss">تجاهل</string>
+    <string name="subtitles_transcribe_not_configured_hint">خدمة تحويل الكلام إلى نص متوقفة. افتح الإعدادات ← نقطة Whisper، وأدخل نقطة متوافقة مع OpenAI (HTTPS)، ومفتاح API اختياري لتفعيل النسخ.</string>
+    <string name="subtitles_whisper_open_settings">افتح الإعدادات ← نقطة Whisper</string>
+    <string name="subtitles_transcribe_bad_file">تعذّر قراءة الملف المختار. اختر ملف صوتي أو فيديو صالحاً.</string>
+    <string name="subtitles_transcribe_network_error">خطأ في الشبكة — تحقق من الاتصال ثم حاول مجدداً.</string>
+    <string name="subtitles_transcribe_server_error">خطأ في خادم النسخ (HTTP %1$d). تتم إعادة المحاولة تلقائياً.</string>
+    <string name="subtitles_transcribe_auth_error">رفض خادم النسخ الطلب (HTTP %1$d). تحقق من مفتاح Whisper API في الإعدادات.</string>
+    <string name="subtitles_transcribe_empty_error">لم يُرجع الخادم أي مقاطع ترجمة مفهومة لهذا الملف.</string>
+    <string name="subtitles_transcribe_unsupported">تعذّر نسخ هذا الملف. استخدم ملف صوتي (MP3 أو M4A أو WAV) أو فيديو بمسار صوتي واضح.</string>
+    <string name="subtitles_transcribe_unconfigured">نقطة Whisper غير مهيأة. قم بتعيينها في الإعدادات.</string>
+
+    <!-- الإلغاء، منع التكرار، الاستيراد، خطاف الصوت المحمّل، محرر المقاطع -->
+    <string name="subtitles_transcribe_cancel">إلغاء</string>
+    <string name="subtitles_transcribe_canceled">تم إلغاء النسخ. أعد اختيار الملف لإعادة المحاولة.</string>
+    <string name="subtitles_transcribe_duplicate">هناك عملية نسخ جارية بالفعل لهذا الملف.</string>
+    <string name="subtitles_import_subtitle">استيراد ملف ترجمة</string>
+    <string name="subtitles_import_subtitle_action">تحميل .srt / .vtt / .ass</string>
+    <string name="subtitles_import_bad_file">ملف ترجمة غير مدعوم. استخدم .srt أو .vtt أو .ass بمقاطع صالحة.</string>
+    <string name="subtitles_imported_badge">مستورد</string>
+    <string name="subtitles_imported_done">تم الاستيراد: %1$s</string>
+    <string name="subtitles_downloaded_audio_title">أحدث ملف صوت/فيديو تم تنزيله</string>
+    <string name="subtitles_downloaded_audio_action">نسخ هذا الملف</string>
+    <string name="subtitles_edit_cues">تعديل المقاطع</string>
+    <string name="subtitles_edit_done">انتهاء التعديل</string>
+
+    <!-- G-3: زر إعادة المحاولة في شريط رسائل الخطأ -->
+    <string name="subtitles_error_retry">إعادة المحاولة</string>
+</resources>

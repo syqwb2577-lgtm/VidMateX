@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="history_title">History</string>
+    <string name="history_include_failed">Include failed</string>
+    <string name="history_empty_title">No completed downloads yet</string>
+    <string name="history_empty_subtitle">Finished downloads will appear here. You can open, share, or delete them.</string>
+    <string name="history_cd_failed">Failed download</string>
+    <string name="history_action_open">Open</string>
+    <string name="history_action_share">Share</string>
+    <string name="history_action_delete">Delete</string>
+    <string name="history_cd_open">Open</string>
+    <string name="history_cd_share">Share</string>
+    <string name="history_cd_delete">Delete</string>
+    <string name="history_cd_preview">Preview</string>
+    <string name="history_action_preview">Preview</string>
+    <string name="history_today">Today</string>
+    <string name="history_yesterday">Yesterday</string>
+    <string name="history_failed">failed</string>
+    <string name="history_toast_file_missing">File not found on device</string>
+    <string name="history_toast_no_open_app">No app installed can open this file</string>
+    <string name="history_toast_no_share_app">No app installed can share this file</string>
+    <string name="history_share_subject">Share “%1$s”</string>
+    <string name="history_bytes_unknown">—</string>
+    <!-- State badges (mirror Downloads terminology) -->
+    <string name="history_state_queued">Queued</string>
+    <string name="history_state_active">Downloading</string>
+    <string name="history_state_paused">Paused</string>
+    <string name="history_state_completed">Completed</string>
+    <string name="history_state_failed">Failed</string>
+    <string name="history_state_cancelled">Cancelled</string>
+    <!-- Progress / meta line -->
+    <string name="history_bytes_of">%1$s of %2$s</string>
+    <string name="history_bytes_saved">Saved · %1$s</string>
+    <string name="history_eta_left">%1$s left</string>
+    <string name="history_state_paused_at">Paused at %1$d%%</string>
+    <!-- Actions -->
+    <string name="history_action_retry">Retry</string>
+    <string name="history_cd_retry">Retry download</string>
+    <string name="history_retry_queued">Retry queued</string>
+    <!-- Expandable error details -->
+    <string name="history_error_show">Show error details</string>
+    <string name="history_error_hide">Hide error details</string>
+    <!-- Loading + all-items empty state -->
+    <string name="history_loading">Loading downloads…</string>
+    <string name="history_empty_title_all">No downloads yet</string>
+    <string name="history_empty_subtitle_all">Downloads and their progress will appear here. Finished files can be opened, shared, or previewed with subtitles.</string>
+</resources>

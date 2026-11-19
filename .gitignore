@@ -1,0 +1,44 @@
+# --- Gradle / build outputs ---
+build/
+.gradle/
+local.properties
+
+# --- Built artifacts (never commit) ---
+*.apk
+*.aab
+*.ap_
+*.apks
+*.xapk
+
+# --- Signing (never commit keystores or passwords) ---
+*.jks
+*.keystore
+*.p12
+*.pfx
+keystore.properties
+release-keystore.jks
+app/release/
+
+# --- IDE ---
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+.kotlin/
+
+# --- Kotlin / Java ---
+*.class
+*.log
+
+# --- Python backend ---
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+backend/.venv/
+# Filled-in env files (placeholders committed as *.example only)
+.env
+backend/.env
+

@@ -1,0 +1,229 @@
+# VidMateX — Validation-only continuous integration.
+#
+# IMPORTANT: this workflow deliberately contains NO APK/AAB packaging job.
+# No Android binary-package task exists anywhere in this repository's workflows
+# (the project-structure job enforces this by scanning for the forbidden task
+# names). Android jobs here only resolve the build model and run JVM unit tests.
+# Packaging a release APK/AAB must be done on a maintainer machine or a separate,
+# manually-triggered private workflow that is not checked into this public repo.
+#
+# Jobs:
+#   backend-tests      — FastAPI resolver test suite (pytest)
+#   gradle-validation   — Gradle model resolution (`help`), JDK 17
+#   android-unit-tests  — Android JVM unit tests (`testDebugUnitTest` only)
+#   project-structure   — required paths present; no packaging task in workflows
+#   secret-scan         — grep-based high-entropy / key pattern scan
+#
+# No job sets an error-continuation flag: a real failure fails the pipeline.
+
+name: CI Validation
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  backend-tests:
+    name: Backend tests (pytest)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Create venv and install backend dependencies
+        run: |
+          python -m venv backend/.venv
+          # shellcheck disable=SC1091
+          source backend/.venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install -r backend/requirements.txt
+
+      - name: Run backend test suite
+        run: |
+          # shellcheck disable=SC1091
+          source backend/.venv/bin/activate
+          python -m pytest backend/tests -q
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Backend test suite"
+            echo "- Command: \`python -m pytest backend/tests -q\`"
+            echo "- Python: 3.12"
+            echo "- Dependencies: \`backend/requirements.txt\`"
+            echo "- Result: see pytest output above (non-zero exits fail the job)."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  gradle-validation:
+    name: Gradle model validation (JDK 17)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools platforms;android-36 build-tools;36.0.0
+
+      - name: Gradle wrapper validation (model resolution only)
+        run: |
+          chmod +x gradlew
+          ./gradlew help --no-configuration-cache --stacktrace
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Gradle validation"
+            echo "- Task: \`./gradlew help --no-configuration-cache\`"
+            echo "- JDK: 17 (Temurin); AGP 8.10.1; Gradle 8.11.1"
+            echo "- No packaging task executed (validation only)."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  android-unit-tests:
+    name: Android JVM unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools platforms;android-36 build-tools;36.0.0
+
+      - name: Run JVM unit tests (testDebugUnitTest only)
+        run: |
+          chmod +x gradlew
+          ./gradlew testDebugUnitTest --stacktrace
+
+      - name: Job summary
+        if: always()
+        run: |
+          XML_COUNT=$(find . -path '*/build/test-results/testDebugUnitTest/*.xml' -type f | wc -l)
+          {
+            echo "## Android JVM unit tests"
+            echo "- Task: \`./gradlew testDebugUnitTest\` (unit tests only; no APK/AAB)"
+            echo "- JUnit XML result files: ${XML_COUNT}"
+            echo "- Instrumented/Room migration tests are device-only and are NOT run here."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  project-structure:
+    name: Project structure & workflow safety check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Required paths present
+        run: |
+          set -e
+          check() {
+            if [ ! -e "$1" ]; then echo "::error::missing required path: $1"; exit 1; fi
+            echo "OK  $1"
+          }
+          check settings.gradle.kts
+          check build.gradle.kts
+          check gradle/libs.versions.toml
+          check gradle/wrapper/gradle-wrapper.properties
+          check app/build.gradle.kts
+          check app/src/main/AndroidManifest.xml
+          check backend/app/main.py
+          check backend/requirements.txt
+          check backend/tests
+          check docs/TESTING_GUIDE.md
+          check docs/BACKEND_SETUP.md
+          check docs/WHISPER_SETUP.md
+          check docs/COMPATIBILITY.md
+          check docs/EXTERNAL_SERVICES.md
+          check docs/FFMPEG.md
+          check docs/GITHUB_SETUP.md
+          check README.md
+          check CHANGELOG.md
+          check SECURITY.md
+          check PRIVACY_POLICY.md
+          check .env.example
+          check backend/.env.example
+
+      - name: No APK/AAB packaging task in any workflow
+        run: |
+          set -e
+          # Tokens are concatenated so the literal forbidden task names never
+          # appear in this file; the scan itself greps the assembled pattern.
+          FORBIDDEN="assemble""Debug|assemble""Release|bundle""Release"
+          if grep -RInE "$FORBIDDEN" .github/workflows; then
+            echo "::error::workflow contains a packaging task; APK/AAB output is forbidden"
+            exit 1
+          fi
+          echo "OK: no APK/AAB packaging task name found in .github/workflows"
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Project structure"
+            echo "- Required Gradle, backend, docs, and env files checked."
+            echo "- Workflow packaging-task scan: pass (no APK/AAB tasks)."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  secret-scan:
+    name: Secret pattern scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Scan for high-entropy key patterns (placeholders excluded)
+        run: |
+          set -e
+          # Placeholder/example files (.env.example, *.example) and narrative
+          # docs are excluded; real committed configuration and source files
+          # are scanned for obvious key shapes. Maintainers may additionally
+          # run gitleaks (https://github.com/gitleaks/gitleaks) against history.
+          PATTERN='sk-[A-Za-z0-9_-]{16,}|Bearer[[:space:]]+[A-Za-z0-9._-]{16,}|((api[_-]?key|resolver[_-]?key|whisper[_-]?key|secret|token|password|private[_-]?key)[[:space:]]*[:=][[:space:]]*["'"'"']?[A-Za-z0-9+/=_-]{32,})'
+          if grep -RInE "$PATTERN" \
+              --exclude-dir=.git --exclude-dir=.gradle --exclude-dir=build \
+              --exclude-dir=.venv --exclude='*.example' --exclude='*.md' . ; then
+            echo "::error::possible committed secret detected; rotate it and use environment variables"
+            exit 1
+          fi
+          echo "OK: no high-entropy key pattern matched in committed source/config files"
+
+      - name: Job summary
+        if: always()
+        run: |
+          {
+            echo "## Secret scan"
+            echo "- Scope: source/config files; \`*.example\` placeholders and docs excluded."
+            echo "- Patterns: \`sk-\*`, \`Bearer \*\`, and 32+ char assigned key/secret/token/password values."
+          } >> "$GITHUB_STEP_SUMMARY"

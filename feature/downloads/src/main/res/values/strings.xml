@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Filter chips -->
+    <string name="dl_filter_all">All</string>
+    <string name="dl_filter_active">Active</string>
+    <string name="dl_filter_completed">Completed</string>
+    <string name="dl_filter_failed">Failed</string>
+    <string name="dl_filter_paused">Paused</string>
+
+    <!-- Empty state -->
+    <string name="dl_empty_title">No downloads here yet</string>
+    <string name="dl_empty_subtitle">Paste a link on the Home tab to start one.</string>
+
+    <!-- State badges -->
+    <string name="dl_state_queued">Queued</string>
+    <string name="dl_state_active">Downloading</string>
+    <string name="dl_state_paused">Paused</string>
+    <string name="dl_state_completed">Completed</string>
+    <string name="dl_state_failed">Failed</string>
+    <string name="dl_state_cancelled">Cancelled</string>
+
+    <!-- Progress line -->
+    <string name="dl_progress_queued">Queued…</string>
+    <string name="dl_progress_downloading">downloading…</string>
+    <string name="dl_progress_paused_at">Paused at %1$d%%</string>
+    <string name="dl_progress_saved">Saved · %1$s</string>
+
+    <!-- Action content descriptions -->
+    <string name="dl_cd_pause">Pause</string>
+    <string name="dl_cd_cancel">Cancel</string>
+    <string name="dl_cd_resume">Resume</string>
+    <string name="dl_cd_retry">Retry</string>
+    <string name="dl_cd_open">Open</string>
+    <string name="dl_cd_share">Share</string>
+    <string name="dl_cd_delete">Delete</string>
+    <string name="dl_cd_preview">Preview</string>
+
+    <!-- Notification channel names / descriptions -->
+    <string name="dl_channel_downloads_name">Downloads</string>
+    <string name="dl_channel_downloads_desc">Download progress and completion</string>
+    <string name="dl_channel_processing_name">Processing</string>
+    <string name="dl_channel_processing_desc">Subtitle embedding and media processing</string>
+
+    <!-- Notification text -->
+    <string name="dl_notif_downloading">Downloading…</string>
+    <string name="dl_notif_title_downloading">Downloading</string>
+    <string name="dl_notif_title_processing">Processing</string>
+    <string name="dl_notif_embedding">Embedding subtitles…</string>
+    <string name="dl_notif_eta_left">%1$s left</string>
+    <string name="dl_notif_complete">Download complete</string>
+    <string name="dl_notif_complete_text">Download finished</string>
+    <string name="dl_notif_failed">Download failed</string>
+    <string name="dl_notif_action_cancel">Cancel</string>
+    <!-- Paused notification -->
+    <string name="dl_notif_action_pause">Pause</string>
+    <string name="dl_notif_paused">Paused</string>
+    <string name="dl_notif_paused_at">Paused at %1$d%%</string>
+    <!-- Friendly error messages -->
+    <string name="dl_error_network">Network error. Check your connection and try again.</string>
+    <string name="dl_error_server">Server error (%1$s). Please retry later.</string>
+    <string name="dl_error_permanent_http">Download failed (HTTP %1$s). The link may have expired or require access.</string>
+    <string name="dl_error_storage">Storage unavailable: not enough free space or the download folder is not writable.</string>
+    <string name="dl_error_permission">Permission denied: allow access to the download folder and retry.</string>
+    <string name="dl_error_missing_stream">No downloadable stream was found for the selected quality.</string>
+    <string name="dl_error_unsupported">This format is not supported for download.</string>
+    <string name="dl_error_resolver">The source could not be resolved. The link may be unsupported or unavailable.</string>
+    <string name="dl_error_unknown">Download failed. Please try again.</string>
+    <string name="dl_error_duplicate">This item is already queued or downloading.</string>
+    <!-- URL / security validation (requirement §2/§7) -->
+    <string name="dl_error_invalid_url">The link is not a valid media URL. Check the address and try again.</string>
+    <string name="dl_error_not_https">The link must use a secure HTTPS connection for download.</string>
+    <string name="dl_error_private_host">Downloads from private, loopback, or local-network addresses are blocked for security.</string>
+    <string name="dl_error_unsupported_host">This link type is not supported for download.</string>
+    <!-- Compliance (requirement §3): platform pages are metadata-only -->
+    <string name="dl_error_platform_compliance">This platform page provides preview metadata only. Direct video/audio file links can be downloaded; platform page downloads are not supported by this app.</string>
+    <string name="dl_compliance_note">Note: platform links (e.g. YouTube, Facebook, TikTok) are shown for metadata preview only. This app downloads direct video/audio file links and does not download platform pages.</string>
+    <!-- Integrity (requirement §8) -->
+    <string name="dl_error_integrity">The downloaded file was incomplete or corrupted and was discarded. Please retry.</string>
+    <string name="dl_error_embed_failed">Subtitle embedding failed. The container or subtitle format may be unsupported.</string>
+    <string name="dl_error_embed_invalid_spec">Could not read the embedding job. Please download again.</string>
+    <!-- Progress extras -->
+    <string name="dl_progress_bytes">%1$s of %2$s</string>
+    <string name="dl_badge_audio">Audio</string>
+
+    <!-- G-3: dismiss a failed-row error message (row history is kept) -->
+    <string name="dl_error_dismiss">Dismiss</string>
+</resources>

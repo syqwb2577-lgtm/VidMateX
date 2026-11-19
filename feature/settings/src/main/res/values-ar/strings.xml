@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_section_appearance">المظهر</string>
+    <string name="settings_section_downloads">التنزيلات</string>
+    <string name="settings_section_subtitles">الترجمات والترجمة الآلية</string>
+    <string name="settings_section_advanced">متقدم</string>
+    <string name="settings_section_about">حول التطبيق</string>
+
+    <string name="settings_theme">السمة</string>
+    <string name="settings_theme_system">افتراضي النظام</string>
+    <string name="settings_theme_light">فاتحة</string>
+    <string name="settings_theme_dark">داكنة</string>
+
+    <string name="settings_language">اللغة</string>
+    <string name="settings_language_system">افتراضي النظام</string>
+    <string name="settings_language_english">الإنجليزية</string>
+    <string name="settings_language_arabic">العربية</string>
+    <string name="settings_language_restart_note">تسري تغيير اللغة بعد إعادة تشغيل التطبيق.</string>
+
+    <string name="settings_download_folder">مجلد التنزيل</string>
+    <string name="settings_download_folder_pick">اختر مجلداً…</string>
+    <string name="settings_download_folder_none">غير محدد (يستخدم الافتراضي)</string>
+    <string name="settings_download_folder_set">%1$s</string>
+
+    <string name="settings_default_quality">الجودة الافتراضية</string>
+    <string name="settings_quality_auto">السؤال في كل مرة</string>
+    <string name="settings_default_subtitle_lang">لغة الترجمة الافتراضية</string>
+    <string name="settings_subtitle_lang_none">بدون</string>
+
+    <string name="settings_translation_provider">مزوّد الترجمة الآلية</string>
+    <string name="settings_translation_none">بدون</string>
+    <string name="settings_translation_mlkit">على الجهاز (ML Kit)</string>
+    <string name="settings_translation_libretranslate">LibreTranslate (مستضاف ذاتياً)</string>
+    <string name="settings_libretranslate_url">رابط LibreTranslate الأساسي</string>
+    <string name="settings_libretranslate_hint">https://your-server.example</string>
+    <string name="settings_libretranslate_note">مستضاف ذاتياً فقط. أنت مسؤول عن أي حدود استخدام أو تكاليف لخادمك.</string>
+
+    <string name="settings_resolver_endpoint">نقطة نهاية المحلل</string>
+    <string name="settings_resolver_hint">محلل yt-dlp مستضاف ذاتياً، https فقط. اتركه فارغاً لتعطيل يوتيوب وفيسبوك وتيك توك.</string>
+    <string name="settings_whisper_endpoint">نقطة Whisper</string>
+    <string name="settings_whisper_hint">https://your-whisper.example (متوافق مع OpenAI /v1/audio/transcriptions)</string>
+    <string name="settings_whisper_api_key">مفتاح Whisper API (اختياري)</string>
+    <string name="settings_whisper_api_key_hint">يُخزَّن على الجهاز فقط، ولا يُسجَّل أبداً</string>
+    <string name="settings_whisper_note">Whisper مستضاف ذاتياً فقط. يعمل النسخ بعد التنزيل على ملف الصوت المحفوظ. أنت مسؤول عن تكاليف وحدود خادمك.</string>
+    <string name="settings_auto_transcribe">النسخ التلقائي للتنزيلات</string>
+    <string name="settings_auto_transcribe_hint">تشغيل نسخ Whisper تلقائياً بعد اكتمال كل تنزيل. يتطلب نقطة Whisper صالحة.</string>
+    <string name="settings_section_resolver">خادم المحلل (مستضاف ذاتياً)</string>
+    <string name="settings_section_whisper">نسخ الكلام (Whisper)</string>
+    <string name="settings_resolver_server_url">رابط خادم المحلل</string>
+    <string name="settings_resolver_server_placeholder">https://your-resolver.example/</string>
+    <string name="settings_resolver_api_key">مفتاح API للمحلل</string>
+    <string name="settings_resolver_api_key_hint">القيمة نفسها لمتغير RESOLVER_API_KEY في الخادم؛ تُشفَّر على هذا الجهاز</string>
+    <string name="settings_resolver_test">اختبار الاتصال</string>
+    <string name="settings_resolver_test_checking">جارٍ التحقق من الاتصال…</string>
+    <string name="settings_resolver_test_ok">متصل</string>
+    <string name="settings_resolver_test_ok_detail">متصل · الإصدار %1$s · %2$d محلل(ات)</string>
+    <string name="settings_resolver_test_not_tested">لم يتم الاختبار بعد</string>
+    <string name="settings_resolver_error_not_configured">أدخل رابط خادم المحلل أولاً.</string>
+    <string name="settings_resolver_error_invalid_url">أدخل رابط خادم صالحاً يبدأ بـ https://.</string>
+    <string name="settings_resolver_error_timeout">انتهت مهلة الاتصال. تحقق من الخادم ومن اتصالك بالشبكة.</string>
+    <string name="settings_resolver_error_no_network">لا يوجد اتصال بالإنترنت أو تعذر العثور على المضيف.</string>
+    <string name="settings_resolver_error_http">رفض الخادم الاختبار (HTTP %1$d). تحقق من مفتاح API وحالة الخادم.</string>
+    <string name="settings_resolver_error_unknown">فشل الاتصال. تحقق من رابط الخادم وحاول مرة أخرى.</string>
+    <string name="settings_resolver_helper">يُرسل المفتاح عبر ترويسة X-API-Key عبر HTTPS فقط. يُشفَّر أثناء التخزين باستخدام Android Keystore، ولا يُسجَّل أبداً، ولا يُشحن مع التطبيق. اترك الرابط والمفتاح فارغين لتعطيل المحلل.</string>
+    <string name="settings_whisper_test">اختبار النقطة</string>
+    <string name="settings_whisper_test_checking">جارٍ التحقق من النقطة…</string>
+    <string name="settings_whisper_test_ok">النقطة متاحة</string>
+    <string name="settings_whisper_status_configured">مُهيأ</string>
+    <string name="settings_whisper_status_not_configured">غير مُهيأ — أضف نقطة https</string>
+    <string name="settings_whisper_error_not_configured">أضف رابط نقطة Whisper أولاً.</string>
+    <string name="settings_whisper_error_invalid_url">أدخل رابط نقطة صالحاً يبدأ بـ https://.</string>
+    <string name="settings_whisper_error_unreachable">تعذر الوصول إلى النقطة. تحقق من الرابط ومن تشغيل الخادم.</string>
+
+    <string name="settings_require_wifi">التنزيل عبر Wi-Fi فقط</string>
+    <string name="settings_embed_mode">وضع تضمين الترجمة الافتراضي</string>
+    <string name="settings_embed_none">بدون (ملف منفصل)</string>
+    <string name="settings_embed_soft">ناعم (مسار قابل للاختيار)</string>
+    <string name="settings_embed_hard">صلب (مدمج في الفيديو)</string>
+
+    <string name="settings_about_version">الإصدار 1.0.0</string>
+    <string name="settings_privacy">سياسة الخصوصية</string>
+    <string name="settings_privacy_text">يقوم VidMateX بتنزيل المحتوى الذي تلصقه فقط، ولا يرفع روابطك أو سجلك أبداً. يتطلب تحليل يوتيوب وفيسبوك وتيك توك نقطة نهاية محلل مستضافة ذاتياً تقوم بتكوينها؛ لا يوجد أي رابط أو مفتاح مدمج في التطبيق.</string>
+
+    <string name="settings_dialog_choose">اختر</string>
+    <string name="action_ok">موافق</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="settings_action_save">حفظ</string>
+    <string name="settings_saved_snackbar">تم حفظ الإعدادات</string>
+    <string name="settings_show_password">إظهار المفتاح</string>
+    <string name="settings_hide_password">إخفاء المفتاح</string>
+    <string name="settings_cd_folder">مجلد التنزيل</string>
+
+    <!-- G-3: زر إعادة الاختبار عند فشل اختبار الخادم أو Whisper -->
+    <string name="settings_action_retest">إعادة الاختبار</string>
+
+    <!-- مسح/تبديل المفاتيح + جاهزية النسخ (§10) -->
+    <string name="settings_key_clear">مسح المفتاح</string>
+    <string name="settings_whisper_blocking_missing">أضف نقطة النهاية قبل بدء النسخ.</string>
+    <string name="settings_whisper_blocking_invalid">استخدم نقطة https (يسمح بـ http فقط للتطوير على العودة المحلية).</string>
+    <string name="settings_whisper_key_warning">لم يتم تعيين مفتاح API — تعمل الخوادم الذاتية بدون مفتاح؛ قد ترفض المزودات المستضافة الطلبات.</string>
+</resources>

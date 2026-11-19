@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Library manifest: merged into the app manifest at build time.
+  - FileProvider authority uses ${applicationId} so it matches the app id.
+  - DownloadActionReceiver handles the notification Cancel/Pause/Resume actions.
+  - POST_NOTIFICATIONS (API 33+) is declared here; the runtime permission request is owned
+    by the app shell (MainActivity) — cross-module coordination noted in the audit report.
+  - Storage compliance (requirement §7): NO legacy WRITE_EXTERNAL_STORAGE /
+    READ_EXTERNAL_STORAGE declarations remain. Final files go to a user-chosen SAF tree,
+    MediaStore Downloads (API 29+), or the app-private getExternalFilesDir directory
+    (API < 29); temp files live in cacheDir. Nothing is written outside app-controlled
+    locations.
+  NOTE for the app-module owner: Application must implement Configuration.Provider
+  with HiltWorkerFactory (from androidx.hilt:hilt-work) so @HiltWorker workers run.
+  FOREGROUND_SERVICE / FOREGROUND_SERVICE_DATA_SYNC are declared in the app manifest;
+  the worker's ForegroundInfo carries FOREGROUND_SERVICE_TYPE_DATA_SYNC on API 34+.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <application>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <receiver
+            android:name=".DownloadActionReceiver"
+            android:exported="false" />
+    </application>
+</manifest>

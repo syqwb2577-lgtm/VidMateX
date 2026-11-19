@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VidMateX</string>
+
+    <!-- Bottom navigation labels -->
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_downloads">التنزيلات</string>
+    <string name="nav_subtitles">الترجمات</string>
+    <string name="nav_history">السجل</string>
+    <string name="nav_settings">الإعدادات</string>
+
+    <!-- Common actions -->
+    <string name="action_paste">لصق</string>
+    <string name="action_download">تنزيل</string>
+    <string name="action_pause">إيقاف مؤقت</string>
+    <string name="action_resume">استئناف</string>
+    <string name="action_cancel">إلغاء</string>
+    <string name="action_retry">إعادة المحاولة</string>
+    <string name="action_delete">حذف</string>
+    <string name="action_share">مشاركة</string>
+    <string name="action_open">فتح</string>
+    <string name="action_ok">موافق</string>
+    <string name="action_save">حفظ</string>
+
+    <!-- Common errors -->
+    <string name="error_invalid_link">يبدو أن الرابط غير صالح.</string>
+    <string name="error_unsupported_source">هذا المصدر غير مدعوم. يتم دعم يوتيوب وفيسبوك وتيك توك والروابط المباشرة فقط.</string>
+    <string name="error_resolve_failed">تعذّر تحليل الرابط. تحقق من الرابط أو من نقطة نهاية المحلل في الإعدادات.</string>
+    <string name="error_no_selection">اختر الجودة (واختيارياً الترجمة) قبل التنزيل.</string>
+    <string name="error_generic">حدث خطأ ما. يرجى المحاولة مرة أخرى.</string>
+    <string name="error_network">خطأ في الشبكة. تحقق من اتصال الإنترنت.</string>
+
+    <!-- Splash / about -->
+    <string name="about_version">الإصدار %1$s</string>
+    <!-- Video preview player -->
+    <string name="preview_title">معاينة</string>
+    <string name="preview_close">إغلاق المعاينة</string>
+    <string name="preview_play">تشغيل</string>
+    <string name="preview_pause">إيقاف</string>
+    <string name="preview_seek_back">رجوع 10 ثوانٍ</string>
+    <string name="preview_seek_forward">تقديم 10 ثوانٍ</string>
+    <string name="preview_volume">مستوى الصوت</string>
+    <string name="preview_subtitle_note">يحتوي هذا الملف على مسارات ترجمة ناعمة — استخدم قائمة المشغل لاختيار واحدة.</string>
+    <string name="action_preview">معاينة</string>
+    <!-- زر تبديل الترجمة في شاشة المعاينة -->
+    <string name="preview_cc_on">الترجمة مفعّلة</string>
+    <string name="preview_cc_off">الترجمة معطّلة</string>
+    <string name="preview_error_dismiss">تجاهل</string>
+
+    <!-- عناصر السرعة / المسارات / التأخير في المشغل (§3) -->
+    <string name="preview_speed_menu_title">سرعة التشغيل</string>
+    <string name="preview_audio_track">المسار الصوتي</string>
+    <string name="preview_subtitle_track">الترجمة</string>
+    <string name="preview_track_off">إيقاف</string>
+    <string name="preview_delay_label">تأخير الترجمة</string>
+    <string name="preview_delay_minus">إنقاص التأخير</string>
+    <string name="preview_delay_plus">زيادة التأخير</string>
+    <string name="preview_delay_reset">إعادة ضبط التأخير</string>
+    <string name="preview_buffering">جارٍ التخزين المؤقت…</string>
+    <string name="preview_fullscreen">ملء الشاشة</string>
+    <string name="preview_fullscreen_exit">إنهاء ملء الشاشة</string>
+    <string name="preview_tracks_unavailable">لا توجد مسارات قابلة للاختيار بعد</string>
+    <!-- أخطاء التشغيل المصفوفة (من فئات PlayerErrorMapper) -->
+    <string name="player_error_network">خطأ في الشبكة. تحقق من الاتصال ثم أعد المحاولة.</string>
+    <string name="player_error_timeout">انتهت مهلة البث. أعد المحاولة عند استقرار الشبكة.</string>
+    <string name="player_error_unsupported">صيغة الملف أو الترميز غير مدعوم على هذا الجهاز.</string>
+    <string name="player_error_permission">حظر التشغيل بسبب إذن أو سياسة أمان.</string>
+    <string name="player_error_file_missing">تعذّر العثور على الملف المحلي أو قراءته.</string>
+    <string name="player_error_unknown">فشل التشغيل. أعد المحاولة أو اختر ملفاً آخر.</string>
+    <!-- إذن الإشعارات عند التشغيل (POST_NOTIFICATIONS، واجهة برمجية 33+) -->
+    <string name="notification_permission_rationale">اسمح بالإشعارات لعرض تقدّم التنزيلات واكتمالها. ستستمر التنزيلات حتى لو رفضت.</string>
+    <string name="notification_permission_settings">فتح الإعدادات</string>
+</resources>

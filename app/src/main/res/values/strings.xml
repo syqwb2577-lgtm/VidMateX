@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VidMateX</string>
+
+    <!-- Bottom navigation labels -->
+    <string name="nav_home">Home</string>
+    <string name="nav_downloads">Downloads</string>
+    <string name="nav_subtitles">Subtitles</string>
+    <string name="nav_history">History</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Common actions -->
+    <string name="action_paste">Paste</string>
+    <string name="action_download">Download</string>
+    <string name="action_pause">Pause</string>
+    <string name="action_resume">Resume</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_share">Share</string>
+    <string name="action_open">Open</string>
+    <string name="action_ok">OK</string>
+    <string name="action_save">Save</string>
+
+    <!-- Common errors -->
+    <string name="error_invalid_link">That doesn\'t look like a valid link.</string>
+    <string name="error_unsupported_source">This source is not supported. Only YouTube, Facebook, TikTok, and direct video links are handled.</string>
+    <string name="error_resolve_failed">Could not resolve this link. Check the URL or your resolver endpoint.</string>
+    <string name="error_no_selection">Choose a quality (and optionally a subtitle) before downloading.</string>
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_network">Network error. Check your connection.</string>
+
+    <!-- Splash / about -->
+    <string name="about_version">Version %1$s</string>
+    <!-- Video preview player -->
+    <string name="preview_title">Preview</string>
+    <string name="preview_close">Close preview</string>
+    <string name="preview_play">Play</string>
+    <string name="preview_pause">Pause</string>
+    <string name="preview_seek_back">Back 10 seconds</string>
+    <string name="preview_seek_forward">Forward 10 seconds</string>
+    <string name="preview_volume">Volume</string>
+    <string name="preview_subtitle_note">This file has soft subtitle tracks — use the player menu to select one.</string>
+    <string name="action_preview">Preview</string>
+    <!-- Captions toggle in preview player -->
+    <string name="preview_cc_on">Captions on</string>
+    <string name="preview_cc_off">Captions off</string>
+    <string name="preview_error_dismiss">Dismiss</string>
+
+    <!-- Player speed / track / delay controls (§3) -->
+    <string name="preview_speed_menu_title">Playback speed</string>
+    <string name="preview_audio_track">Audio track</string>
+    <string name="preview_subtitle_track">Subtitles</string>
+    <string name="preview_track_off">Off</string>
+    <string name="preview_delay_label">Caption delay</string>
+    <string name="preview_delay_minus">Decrease delay</string>
+    <string name="preview_delay_plus">Increase delay</string>
+    <string name="preview_delay_reset">Reset delay</string>
+    <string name="preview_buffering">Buffering…</string>
+    <string name="preview_fullscreen">Fullscreen</string>
+    <string name="preview_fullscreen_exit">Exit fullscreen</string>
+    <string name="preview_tracks_unavailable">No selectable tracks yet</string>
+    <!-- Typed playback errors (mapped from PlayerErrorMapper categories) -->
+    <string name="player_error_network">Network error. Check the connection and retry.</string>
+    <string name="player_error_timeout">The stream timed out. Retry when the network is stable.</string>
+    <string name="player_error_unsupported">This file format or codec is not supported on this device.</string>
+    <string name="player_error_permission">Permission or security policy blocked playback.</string>
+    <string name="player_error_file_missing">The local file could not be found or read.</string>
+    <string name="player_error_unknown">Playback failed. Retry or choose another file.</string>
+    <!-- Runtime notification permission (POST_NOTIFICATIONS, API 33+) -->
+    <string name="notification_permission_rationale">Allow notifications so download progress and completion can be shown. Downloads still run if you deny.</string>
+    <string name="notification_permission_settings">Open settings</string>
+</resources>

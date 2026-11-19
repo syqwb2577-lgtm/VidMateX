@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_title">الرئيسية</string>
+    <string name="home_link_hint">الصق رابط فيديو من يوتيوب أو فيسبوك أو تيك توك أو رابط مباشر</string>
+    <string name="home_action_paste">لصق</string>
+    <string name="home_action_analyze">تحليل</string>
+    <string name="home_source_youtube">يوتيوب</string>
+    <string name="home_source_facebook">فيسبوك</string>
+    <string name="home_source_tiktok">تيك توك</string>
+    <string name="home_source_direct">رابط مباشر</string>
+    <string name="home_source_unknown">مصدر غير معروف</string>
+    <string name="home_clipboard_offer">لصق من الحافظة</string>
+    <string name="home_quality_video">جودة الفيديو</string>
+    <string name="home_quality_audio">الصوت</string>
+    <string name="home_audio_only">صوت فقط</string>
+    <string name="home_audio_only_hint">تنزيل المسار الصوتي فقط — بدون مسار فيديو وبدون دمج.</string>
+    <string name="home_download_audio">تنزيل الصوت</string>
+    <string name="home_error_audio_selection">اختر مساراً صوتياً للتنزيل بصوت فقط.</string>
+    <string name="home_error_duplicate">سبق إرسال هذا العنصر: قيد الانتظار أو التنزيل حالياً.</string>
+    <string name="home_error_invalid_url">أدخل رابطاً صالحاً (عنوان ويب يبدأ بـ http:// أو https://).</string>
+    <string name="home_estimated_mb">~%1$.1f م.ب</string>
+    <string name="home_bitrate_kbps">%1$d كيلوبت/ث</string>
+    <string name="home_subtitles">الترجمات</string>
+    <string name="home_subtitles_none">لا توجد ترجمات متاحة</string>
+    <string name="home_subtitles_count">%1$d ترجمة متاحة</string>
+    <string name="home_subtitle_off">بدون ترجمة</string>
+    <string name="home_mode_video_only">فيديو فقط</string>
+    <string name="home_mode_subtitle_only">ترجمة فقط</string>
+    <string name="home_mode_both">فيديو + ترجمة</string>
+    <string name="home_action_download">تنزيل</string>
+    <string name="home_loading">جارٍ تحليل الرابط…</string>
+    <string name="home_download_started">بدأ التنزيل</string>
+    <string name="home_download_failed">تعذّر بدء التنزيل: %1$s</string>
+    <string name="home_author_by">بواسطة %1$s</string>
+    <string name="home_error_no_tracks">لم يتم العثور على جودات قابلة للتنزيل لهذا الرابط.</string>
+    <string name="home_error_no_selection">اختر الجودة (واختيارياً الترجمة) قبل التنزيل.</string>
+    <string name="home_select_quality_hint">اختر الجودة لتفعيل التنزيل</string>
+    <string name="home_duration_unknown">—:—</string>
+    <string name="home_cd_paste_link">حقل لصق الرابط</string>
+    <string name="home_cd_thumbnail">صورة مصغرة للفيديو</string>
+
+    <!-- G-3: بطاقة الخطأ وحالة الفراغ الأولية -->
+    <string name="home_error_retry">إعادة المحاولة</string>
+    <string name="home_error_dismiss">تجاهل</string>
+    <string name="home_empty_title">الصق رابطاً للبدء</string>
+    <string name="home_empty_subtitle">حلّل رابط فيديو لعرض الجودات والمسارات الصوتية والترجمات هنا.</string>
+</resources>

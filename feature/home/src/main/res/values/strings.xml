@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_title">Home</string>
+    <string name="home_link_hint">Paste a YouTube, Facebook, TikTok or direct video link</string>
+    <string name="home_action_paste">Paste</string>
+    <string name="home_action_analyze">Analyze</string>
+    <string name="home_source_youtube">YouTube</string>
+    <string name="home_source_facebook">Facebook</string>
+    <string name="home_source_tiktok">TikTok</string>
+    <string name="home_source_direct">Direct link</string>
+    <string name="home_source_unknown">Unknown source</string>
+    <string name="home_clipboard_offer">Paste from clipboard</string>
+    <string name="home_quality_video">Video quality</string>
+    <string name="home_quality_audio">Audio</string>
+    <string name="home_audio_only">Audio only</string>
+    <string name="home_audio_only_hint">Download the audio track only — no video track and no muxing.</string>
+    <string name="home_download_audio">Download audio</string>
+    <string name="home_error_audio_selection">Choose an audio track to download audio only.</string>
+    <string name="home_error_duplicate">Already queued: this item is currently downloading.</string>
+    <string name="home_error_invalid_url">Enter a valid http(s) link (a web address starting with http:// or https://).</string>
+    <string name="home_estimated_mb">~%1$.1f MB</string>
+    <string name="home_bitrate_kbps">%1$d kbps</string>
+    <string name="home_subtitles">Subtitles</string>
+    <string name="home_subtitles_none">No subtitles available</string>
+    <string name="home_subtitles_count">%1$d subtitle(s) available</string>
+    <string name="home_subtitle_off">No subtitle</string>
+    <string name="home_mode_video_only">Video only</string>
+    <string name="home_mode_subtitle_only">Subtitle only</string>
+    <string name="home_mode_both">Video + subtitle</string>
+    <string name="home_action_download">Download</string>
+    <string name="home_loading">Resolving link…</string>
+    <string name="home_download_started">Download started</string>
+    <string name="home_download_failed">Could not start download: %1$s</string>
+    <string name="home_author_by">by %1$s</string>
+    <string name="home_error_no_tracks">No downloadable tracks found for this link.</string>
+    <string name="home_error_no_selection">Choose a quality (and optionally a subtitle) before downloading.</string>
+    <string name="home_select_quality_hint">Select a quality to enable download</string>
+    <string name="home_duration_unknown">—:—</string>
+    <string name="home_cd_paste_link">Paste link field</string>
+    <string name="home_cd_thumbnail">Video thumbnail</string>
+
+    <!-- G-3 inline error card and initial empty state -->
+    <string name="home_error_retry">Retry</string>
+    <string name="home_error_dismiss">Dismiss</string>
+    <string name="home_empty_title">Paste a link to get started</string>
+    <string name="home_empty_subtitle">Resolve a video link to browse qualities, audio tracks, and subtitles here.</string>
+</resources>

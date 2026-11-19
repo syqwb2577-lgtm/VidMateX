@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="subtitles_title">Subtitles</string>
+    <string name="subtitles_input_hint">Paste a video link (YouTube, Facebook, TikTok, or direct URL)</string>
+    <string name="subtitles_resolve">Resolve</string>
+    <string name="subtitles_resolving">Resolving…</string>
+    <string name="subtitles_clear">Clear</string>
+    <string name="subtitles_select_track">Select subtitle track</string>
+    <string name="subtitles_no_tracks">No subtitle tracks are available for this video.</string>
+    <string name="subtitles_fetching_subtitle">Loading subtitle…</string>
+    <string name="subtitles_preview">Preview (first %1$d of %2$d cues)</string>
+    <string name="subtitles_format">Output format</string>
+    <string name="subtitles_translate">Translate subtitles</string>
+    <string name="subtitles_target_language">Target language</string>
+    <string name="subtitles_translation_not_configured">Translation provider is not configured. Open Settings to enable on-device ML Kit translation or set a LibreTranslate endpoint.</string>
+    <string name="subtitles_apply_translation">Preview translation</string>
+    <string name="subtitles_translating">Translating… (first run downloads the language model)</string>
+    <string name="subtitles_translation_done">Translation applied to preview.</string>
+    <string name="subtitles_mode">Download mode</string>
+    <string name="subtitles_mode_video_only">Video only</string>
+    <string name="subtitles_mode_subtitle_only">Subtitle only</string>
+    <string name="subtitles_mode_video_subtitle">Video + subtitle</string>
+    <string name="subtitles_embed">Embed into video</string>
+    <string name="subtitles_embed_off">Off</string>
+    <string name="subtitles_embed_soft">Soft (selectable track)</string>
+    <string name="subtitles_embed_hard">Hard (burned into video)</string>
+    <string name="subtitles_style">Burn-in style</string>
+    <string name="subtitles_font_size">Font size: %1$d</string>
+    <string name="subtitles_outline_width">Outline width: %1$.1f</string>
+    <string name="subtitles_margin">Vertical margin: %1$d</string>
+    <string name="subtitles_color">Text color</string>
+    <string name="subtitles_color_white">White</string>
+    <string name="subtitles_color_yellow">Yellow</string>
+    <string name="subtitles_color_cyan">Cyan</string>
+    <string name="subtitles_color_green">Green</string>
+    <string name="subtitles_background">Background box</string>
+    <string name="subtitles_position">Position</string>
+    <string name="subtitles_position_bottom">Bottom</string>
+    <string name="subtitles_position_top">Top</string>
+    <string name="subtitles_bold">Bold text</string>
+    <string name="subtitles_live_preview">Live preview</string>
+    <string name="subtitles_sample_cue">Sample subtitle text</string>
+    <string name="subtitles_download">Download</string>
+    <string name="subtitles_enqueueing">Enqueueing…</string>
+    <string name="subtitles_download_queued">Download queued. Track it in the Downloads tab.</string>
+    <string name="subtitles_error_no_track">Select a subtitle track first.</string>
+    <string name="subtitles_error_no_video">No video stream available for this source.</string>
+    <string name="subtitles_error_translation">Translation failed: %1$s</string>
+    <string name="subtitles_lang_ar">Arabic</string>
+    <string name="subtitles_lang_en">English</string>
+    <string name="subtitles_lang_fr">French</string>
+    <string name="subtitles_lang_es">Spanish</string>
+    <string name="subtitles_lang_de">German</string>
+    <string name="subtitles_lang_tr">Turkish</string>
+    <string name="subtitles_lang_zh">Chinese</string>
+    <string name="subtitles_auto_generated">auto-generated</string>
+    <string name="subtitles_shift">Timing shift</string>
+    <string name="subtitles_shift_value">%1$d ms</string>
+    <string name="subtitles_shift_hint">Negative = earlier, positive = later (±60s)</string>
+    <string name="subtitles_shift_reset">Reset</string>
+    <string name="subtitles_sidecar_original">Also save original subtitle as separate file</string>
+    <string name="subtitles_whisper_generate">Generate subtitles from audio (Whisper)</string>
+    <string name="subtitles_whisper_note">Whisper transcription runs after download on the saved audio. Configure the endpoint in Settings.</string>
+    <string name="subtitles_whisper_not_configured">Whisper endpoint not configured — open Settings to enable.</string>
+    <string name="subtitles_preview_original">Original</string>
+    <string name="subtitles_preview_translated">Translated (%1$s)</string>
+    <!-- Whisper speech-to-text transcription worker -->
+    <string name="subtitles_transcribe_title">Speech-to-text (Whisper)</string>
+    <string name="subtitles_transcribe_pick_file">Transcribe audio or video file</string>
+    <string name="subtitles_transcribe_pick_hint">Pick an audio or video file on this device; it is transcribed by your configured Whisper endpoint. Network connection required.</string>
+    <string name="subtitles_transcribe_source_language">Spoken language</string>
+    <string name="subtitles_lang_auto">Auto-detect</string>
+    <string name="subtitles_transcribe_stage_preparing">Preparing file</string>
+    <string name="subtitles_transcribe_stage_transcribe">Uploading and recognizing speech</string>
+    <string name="subtitles_transcribe_stage_write">Writing SRT and VTT files</string>
+    <string name="subtitles_transcribe_queued">Queued for transcription…</string>
+    <string name="subtitles_transcribe_running">Transcribing… %1$d%%</string>
+    <string name="subtitles_transcribe_success">Transcription finished — %1$d subtitle cues ready to preview, translate, or download.</string>
+    <string name="subtitles_transcribe_retry">Retry</string>
+    <string name="subtitles_transcribe_dismiss">Dismiss</string>
+    <string name="subtitles_transcribe_not_configured_hint">Speech-to-text is off. Open Settings → Whisper endpoint, enter an OpenAI-compatible endpoint (HTTPS), and optionally an API key to enable transcription.</string>
+    <string name="subtitles_whisper_open_settings">Open Settings → Whisper endpoint</string>
+    <string name="subtitles_transcribe_bad_file">Could not read the selected file. Pick a valid audio or video file.</string>
+    <string name="subtitles_transcribe_network_error">Network error — check your connection and try again.</string>
+    <string name="subtitles_transcribe_server_error">Transcription server error (HTTP %1$d). Trying again automatically.</string>
+    <string name="subtitles_transcribe_auth_error">Transcription server rejected the request (HTTP %1$d). Check the Whisper API key in Settings.</string>
+    <string name="subtitles_transcribe_empty_error">The server returned no recognizable subtitles for this file.</string>
+    <string name="subtitles_transcribe_unsupported">This file could not be transcribed. Use an audio file (MP3, M4A, WAV) or a video with a clear audio track.</string>
+    <string name="subtitles_transcribe_unconfigured">Whisper endpoint is not configured. Set it in Settings.</string>
+
+    <!-- Cancellation, dedup, import flow, completed-audio hook, cue editor -->
+    <string name="subtitles_transcribe_cancel">Cancel</string>
+    <string name="subtitles_transcribe_canceled">Transcription cancelled. Pick the file again to retry.</string>
+    <string name="subtitles_transcribe_duplicate">A transcription for this file is already running.</string>
+    <string name="subtitles_import_subtitle">Import subtitle file</string>
+    <string name="subtitles_import_subtitle_action">Load .srt / .vtt / .ass</string>
+    <string name="subtitles_import_bad_file">Unsupported subtitle file. Use .srt, .vtt, or .ass with valid cues.</string>
+    <string name="subtitles_imported_badge">imported</string>
+    <string name="subtitles_imported_done">Imported: %1$s</string>
+    <string name="subtitles_downloaded_audio_title">Latest downloaded audio/video</string>
+    <string name="subtitles_downloaded_audio_action">Transcribe this file</string>
+    <string name="subtitles_edit_cues">Edit cues</string>
+    <string name="subtitles_edit_done">Done editing</string>
+
+    <!-- G-3: Retry action on the general error snackbar -->
+    <string name="subtitles_error_retry">Retry</string>
+</resources>

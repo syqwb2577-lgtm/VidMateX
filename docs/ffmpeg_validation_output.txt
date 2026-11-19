@@ -1,0 +1,126 @@
+==================================================================
+VidMateX FFmpeg argument-vector host validation
+workdir: /tmp/vidmatex-ffvalidate-SCxeEa
+ffmpeg version 4.4.2-0ubuntu0.22.04.1 Copyright (c) 2000-2021 the FFmpeg developers
+------------------------------------------------------------------
+SCOPE: argument-vector + ffmpeg syntax/behavior validation on the host
+       system ffmpeg. This does NOT execute the Android AAR/JNI libraries
+       (dev.ffmpegkit-maintained:ffmpeg-kit-full-gpl:8.1.9), ML Kit, or
+       any network service; those remain device/external-service gaps.
+       ABI note: the shipped AAR carries arm64-v8a + x86_64 only; 32-bit
+       ARM (armeabi-v7a) has no native libraries and cannot run FFmpegKit.
+==================================================================
+[setup] synthesizing 2s 320x240 testsrc video + silent AAC
+RESULT:PASS: fixture video.mp4 produced non-empty file (13308 bytes)
+RESULT:PASS: fixture audio.m4a produced non-empty file (20160 bytes)
+RESULT:PASS: fixture video.webm (vp8/vorbis) produced non-empty file (33229 bytes)
+RESULT:PASS: VTT -> SRT conversion fixture created
+
+--- Scenario 1: extractAudioToMp3 (libmp3lame 192k, -vn) ---
+vector: -y -loglevel error -i video.mp4 -vn -c:a libmp3lame -b:a 192k out.mp3
+RESULT:PASS: audio extraction exit code 0
+RESULT:PASS: audio.mp3 produced non-empty file (50302 bytes)
+RESULT:PASS: audio.mp3 streams MP3 (libmp3lame)
+
+--- Scenario 2: embedSoftSubtitles (mov_text, copy, +faststart) ---
+vector: -y -loglevel error -i video.mp4 -i en_ar.srt -map 0 -map 1 -c:v copy -c:a copy -c:s mov_text -metadata:s:s:0 language=ar -movflags +faststart soft.mp4
+RESULT:PASS: soft embed exit code 0
+RESULT:PASS: soft.mp4 produced non-empty file (13971 bytes)
+RESULT:PASS: soft.mp4 contains mov_text subtitle stream
+RESULT:PASS: soft.mp4 keeps h264 video stream
+RESULT:PASS: soft.mp4 keeps aac audio stream
+
+--- Scenario 3: burnHardSubtitles SRT (libass, charenc=UTF-8, crf 18, medium, audio copy) ---
+vector: -y -loglevel error -i video.mp4 -vf subtitles='en_ar.srt':force_style='FontName=Noto Sans Arabic,Fontsize=24,PrimaryColour=&H00FFFFFF,OutlineColour=&H00000000,BackColour=&H80000000,Outline=2,Alignment=2,MarginV=40,Bold=1':charenc=UTF-8 -c:v libx264 -crf 18 -preset medium -c:a copy hard_srt.mp4
+RESULT:PASS: hard burn SRT exit code 0
+RESULT:PASS: hard_srt.mp4 produced non-empty file (26407 bytes)
+RESULT:PASS: hard_srt.mp4 re-encoded with libx264
+RESULT:PASS: hard_srt.mp4 has no standalone subtitle stream (burned into frames)
+
+--- Scenario 4: burnHardSubtitles ASS (libass direct ASS input) ---
+vector: -y -loglevel error -i video.mp4 -vf subtitles='en_ar.ass':force_style='...':charenc=UTF-8 -c:v libx264 -crf 18 -preset medium -c:a copy hard_ass.mp4
+RESULT:PASS: hard burn ASS exit code 0
+RESULT:PASS: hard_ass.mp4 produced non-empty file (22835 bytes)
+RESULT:PASS: hard_ass.mp4 re-encoded with libx264
+RESULT:PASS: hard_ass.mp4 has no standalone subtitle stream
+
+--- Scenario 4b: hard burn of VTT-converted SRT (conversion contract) ---
+RESULT:PASS: burn of VTT-converted SRT exit code 0
+RESULT:PASS: hard_vtt_converted.mp4 produced non-empty file (20214 bytes)
+
+--- Scenario 5: muxVideoAudio (map 0:v / map 1:a, copy, -shortest) ---
+vector: -y -loglevel error -i video.mp4 -i audio.m4a -map 0:v -map 1:a -c:v copy -c:a copy -shortest mux.mp4
+RESULT:PASS: mux exit code 0
+RESULT:PASS: mux.mp4 produced non-empty file (29878 bytes)
+RESULT:PASS: mux.mp4 carries a video stream
+RESULT:PASS: mux.mp4 carries an audio stream
+RESULT:PASS: mux.mp4 carries no subtitle stream
+
+--- Scenario 6: Whisper chunk split (16 kHz mono MP3, segment_time 600) ---
+vector: -y -i chunk_src.wav -vn -acodec libmp3lame -b:a 64k -ar 16000 -ac 1 -f segment -segment_time 600 chunk_%03d.mp3
+RESULT:PASS: chunk source wav (12s) produced non-empty file (384078 bytes)
+RESULT:PASS: Whisper chunking vector exit code 0
+RESULT:PASS: produced 1 chunk mp3 file(s) (16 kHz mono)
+RESULT:PASS: chunk_000.mp3 streams MP3
+
+--- Scenario 7: remuxContainer (stream copy mp4 -> mkv, -c copy -f matroska) ---
+vector: -y -loglevel error -i video.mp4 -c copy -f matroska remux.mkv
+RESULT:PASS: remux copy exit code 0
+RESULT:PASS: remux.mkv produced non-empty file (12543 bytes)
+RESULT:PASS: remux.mkv keeps a video stream (copy)
+RESULT:PASS: remux.mkv keeps an audio stream (copy)
+
+--- Scenario 8: soft embed WebVTT into WebM (-c:s webvtt, streams copy; no +faststart) ---
+vector: -y -loglevel error -i video.webm -i en_ar.vtt -map 0 -map 1 -c:v copy -c:a copy -c:s webvtt soft.webm
+RESULT:PASS: webm soft embed exit code 0
+RESULT:PASS: soft.webm produced non-empty file (33513 bytes)
+RESULT:PASS: soft.webm contains webvtt subtitle stream
+RESULT:PASS: soft.webm keeps a webm video stream (copy)
+
+--- Scenario 9: splitByTimeSegment (segment muxer, stream copy, 1 s parts) ---
+vector: -y -loglevel error -i video.mp4 -c copy -f segment -segment_time 1 -reset_timestamps 1 vchunk_%03d.mp4
+RESULT:PASS: video segment split exit code 0
+RESULT:PASS: produced 1 video segment(s) via stream copy
+
+==================================================================
+OVERALL: ALL SCENARIOS PASS (host ffmpeg version 4.4.2)
+RESULT SUMMARY: 41 pass tags / 0 fail tags (the script tags each assertion with PASS/FAIL lines above)
+
+==================================================================
+RECONCILIATION NOTE (media-processing + source-adapters completion pass)
+==================================================================
+What THIS host run actually demonstrates (system ffmpeg 4.4.2, Ubuntu 22.04):
+  * Argument-vector parity: every command line below mirrors the pure builders in
+    media/processor FFmpegArgs.kt / FFmpegJob.kt / WhisperChunkVector.kt (List<String>
+    tokens, never shell strings).
+  * FFmpeg CLI syntax acceptance and codec availability for the exercised paths:
+    MP3 extraction (libmp3lame 192k, -vn), SRT soft embed into MP4 (-c:s mov_text,
+    +faststart, language metadata), SRT hard burn (-vf subtitles=..., libx264 CRF 18,
+    medium preset, libass), ASS hard burn, AAC+video mux (-c copy, -shortest),
+    Whisper-style 16 kHz mono MP3 segment chunks, remux stream copy mp4->mkv
+    (-c copy -f matroska), WebVTT soft embed into WebM (-c:s webvtt, stream copy),
+    and video segment splitting (-f segment -segment_time -reset_timestamps 1).
+  * Fixture synthesis and non-empty output / stream-marker checks only.
+
+What this run does NOT demonstrate (device-only or external-service gaps; no evidence
+is claimed for them here):
+  * Loading and executing the Android AAR dev.ffmpegkit-maintained:ffmpeg-kit-full-gpl:8.1.9
+    (JNI/.so extraction, FFmpegKit.executeWithArgumentsAsync callbacks, ReturnCode
+    handling, statistics callback timing). Host ffmpeg is a different binary.
+  * ABI coverage: the maintained AAR ships arm64-v8a and x86_64; armeabi-v7a (32-bit
+    ARM) has no native libraries and FFmpegKit cannot execute there (graceful
+    NativeUnavailable typed error path only).
+  * ML Kit on-device translation model download/execution; LibreTranslate HTTP
+    translation; Whisper-compatible HTTP transcription (network + runtime only).
+  * Device storage pre-check against real usableSpace; the tested part is the pure
+    StorageEstimate math (FFmpegJobModelTest), not the Android File.usableSpace call.
+  * Exact progress-percentage reporting (host run checks exit codes/files only).
+
+Pure-JVM unit tests accompanying this layer (not executed in this environment:
+no JDK 17 / no Gradle; source-ready, JUnit4, Android-free):
+  FFmpegArgsTest, FFmpegJobModelTest, WhisperChunkVectorTest, SubtitleHardeningTest,
+  SubtitleParserImplTest, SubtitleParserExtendedTest, SubtitleShiftAndLanguageTest,
+  SubtitleShiftIndexTest, SubtitleFormatConversionTest, WhisperSrtParserTest,
+  CueTranslationMapperTest, TranslatorRegistryAndFakeTest,
+  DirectUrlAdapterLogicTest, ResolverPolicyTest.
+==================================================================

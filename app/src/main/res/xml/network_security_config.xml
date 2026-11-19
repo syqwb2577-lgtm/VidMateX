@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Network security policy. Cleartext (plain HTTP) is denied by default. All endpoints
+  used by the app (LibreTranslate, self-hosted resolver, direct media URLs) must be HTTPS.
+  Debug builds may permit cleartext to ease local development against a self-hosted
+  resolver on the LAN.
+-->
+<network-security-config>
+    <!--
+      Development loopback exception only: the Settings reachability probe
+      (WhisperProbeUrlValidator) permits plain http for self-hosted development
+      endpoints on the device/emulator loopback. Public/non-loopback hosts remain
+      HTTPS-only via base-config below. These domains never resolve to the public
+      internet, so no production traffic uses cleartext.
+    -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <domain includeSubdomains="false">0.0.0.0</domain>
+        <domain includeSubdomains="false">10.0.2.2</domain>
+        <domain includeSubdomains="false">::1</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    <debug-overrides>
+        <trust-anchors>
+            <certificates src="system" />
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+</network-security-config>
