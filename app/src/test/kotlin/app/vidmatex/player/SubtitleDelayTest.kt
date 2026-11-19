@@ -75,6 +75,29 @@ class SubtitleDelayTest {
     }
 
     @Test
+    fun step_increasesAndDecreasesDelay() {
+        val initial = 1_000L
+        assertEquals(1_500L, SubtitleDelay.clamp(initial + SubtitleDelay.STEP_MS))
+        assertEquals(500L, SubtitleDelay.clamp(initial - SubtitleDelay.STEP_MS))
+    }
+
+    @Test
+    fun step_neverExceedsMaximumDelay() {
+        assertEquals(
+            SubtitleDelay.MAX_DELAY_MS,
+            SubtitleDelay.clamp(SubtitleDelay.MAX_DELAY_MS + SubtitleDelay.STEP_MS)
+        )
+    }
+
+    @Test
+    fun step_neverGoesBelowMinimumDelay() {
+        assertEquals(
+            SubtitleDelay.MIN_DELAY_MS,
+            SubtitleDelay.clamp(SubtitleDelay.MIN_DELAY_MS - SubtitleDelay.STEP_MS)
+        )
+    }
+
+    @Test
     fun step_isHalfSecond() {
         assertEquals(500L, SubtitleDelay.STEP_MS)
     }
