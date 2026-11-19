@@ -224,6 +224,6 @@ jobs:
         run: |
           {
             echo "## Secret scan"
-            echo "- Scope: source/config files; \`*.example\` placeholders and docs excluded."
-            echo "- Patterns: \`sk-\*`, \`Bearer \*\`, and 32+ char assigned key/secret/token/password values."
+            echo "- Scope: source/config files; example placeholders and docs excluded."
+            echo "- Patterns: sk and Bearer tokens, plus 32+ character assigned secret values."
           } >> "$GITHUB_STEP_SUMMARY"
