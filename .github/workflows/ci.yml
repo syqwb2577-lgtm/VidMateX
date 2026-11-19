@@ -174,18 +174,34 @@ jobs:
           check PRIVACY_POLICY.md
           check .env.example
           check backend/.env.example
+check .github/workflows/build-debug-apk.yml
 
-      - name: No APK/AAB packaging task in any workflow
+      - name: Keep validation workflow free of packaging tasks
         run: |
           set -e
           # Tokens are concatenated so the literal forbidden task names never
           # appear in this file; the scan itself greps the assembled pattern.
-          FORBIDDEN="assemble""Debug|assemble""Release|bundle""Release"
+          FORBIDDEN="assemble""Release|bundle""Debug|bundle""Release"
           if grep -RInE "$FORBIDDEN" .github/workflows; then
-            echo "::error::workflow contains a packaging task; APK/AAB output is forbidden"
+            echo "::error::Release/AAB packaging tasks are forbidden"
             exit 1
           fi
-          echo "OK: no APK/AAB packaging task name found in .github/workflows"
+
+          DEBUG_TASK="assemble""Debug"
+          if ! grep -Fq "$DEBUG_TASK" .github/workflows/build-debug-apk.yml; then
+            echo "::error::dedicated Debug APK workflow is missing its build task"
+            exit 1
+          fi
+
+          for file in .github/workflows/*.yml; do
+            [ "$file" = ".github/workflows/build-debug-apk.yml" ] && continue
+            if grep -nF "$DEBUG_TASK" "$file"; then
+              echo "::error::Debug APK task found outside its dedicated workflow"
+              exit 1
+            fi
+          done
+
+          echo "OK: only the dedicated workflow can build Debug APK; Release/AAB tasks are forbidden"
 
       - name: Job summary
         if: always()
@@ -193,7 +209,7 @@ jobs:
           {
             echo "## Project structure"
             echo "- Required Gradle, backend, docs, and env files checked."
-            echo "- Workflow packaging-task scan: pass (no APK/AAB tasks)."
+            echo "- Validation workflow packaging-task scan: pass."
           } >> "$GITHUB_STEP_SUMMARY"
 
   secret-scan:
