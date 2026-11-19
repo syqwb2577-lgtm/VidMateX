@@ -210,7 +210,7 @@ jobs:
           # docs are excluded; real committed configuration and source files
           # are scanned for obvious key shapes. Maintainers may additionally
           # run gitleaks (https://github.com/gitleaks/gitleaks) against history.
-          PATTERN='sk-[A-Za-z0-9_-]{16,}|Bearer[[:space:]]+[A-Za-z0-9._-]{16,}|((api[_-]?key|resolver[_-]?key|whisper[_-]?key|secret|token|password|private[_-]?key)[[:space:]]*[:=][[:space:]]*["'"'"']?[A-Za-z0-9+/=_-]{32,})'
+          PATTERN="sk-[A-Za-z0-9_-]{16,}|Bearer[[:space:]]+[A-Za-z0-9._-]{16,}|((api[_-]?key|resolver[_-]?key|whisper[_-]?key|secret|token|password|private[_-]?key)[[:space:]]*[:=][[:space:]]*[\"']?[A-Za-z0-9+/=_-]{32,})"
           if grep -RInE "$PATTERN" \
               --exclude-dir=.git --exclude-dir=.gradle --exclude-dir=build \
               --exclude-dir=.venv --exclude='*.example' --exclude='*.md' . ; then
