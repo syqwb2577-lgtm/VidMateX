@@ -3,7 +3,6 @@ package app.vidmatex
 import android.app.Application
 import androidx.hilt.work.HiltWorkerFactory
 import androidx.work.Configuration
-import app.vidmatex.transcription.AutoTranscribeObserver
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
@@ -19,12 +18,8 @@ class VidMateXApplication : Application(), Configuration.Provider {
     @Inject
     lateinit var workerFactory: HiltWorkerFactory
 
-    @Inject
-    lateinit var autoTranscribeObserver: AutoTranscribeObserver
-
     override fun onCreate() {
         super.onCreate()
-        autoTranscribeObserver.start()
     }
 
     override val workManagerConfiguration: Configuration
